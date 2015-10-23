@@ -1,14 +1,11 @@
-
 #ifndef IRQ_H
 #define IRQ_H
 
 /* ---------- 割り込み設定 ----------- */
 
-
 // REG_INTERUPT
 // 割り込み発生時に呼び出す関数のアドレスをセット
 #define SetIRQ(x)	REG_INTERUPT = (u32)x
-
 
 // REG_IME
 // 割り込みマスター
@@ -16,7 +13,6 @@
 // 割り込みマスターオン、オフ
 #define IRQ_MASTER_ON	1
 #define IRQ_MASTER_OFF	0
-
 
 // REG_IE, REG_IF
 // 割り込みセット・判定
@@ -36,10 +32,6 @@
 #define IRQ_BIT_DMA3	(1<<11)
 #define IRQ_BIT_KEYS	(1<<12)
 #define IRQ_BIT_CART	(1<<13)
-
-
-
-
 
 #endif
 

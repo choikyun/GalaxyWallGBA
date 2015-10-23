@@ -253,7 +253,7 @@ appeare_comet (void)
 
   move_sprite (SPRITE_COMET + game_state.comet_num, x, y);
   set_sprite_tile (SPRITE_COMET + game_state.comet_num,
-                   TILE_CHR_COMET + comet[game_state.comet_num].kind * 8);
+  TILE_CHR_COMET + comet[game_state.comet_num].kind * 8);
 
   game_state.comet_num++;
 }
@@ -292,7 +292,7 @@ move_comet (void)
         PlaySound (SOUND_STATUS);
         // 自機絵柄
         set_sprite_tile (SPRITE_SHIP,
-                         TILE_CHR_SHIP_COMET1 + comet[curr].kind * 8);
+        TILE_CHR_SHIP_COMET1 + comet[curr].kind * 8);
       }
 
       // 弾削除

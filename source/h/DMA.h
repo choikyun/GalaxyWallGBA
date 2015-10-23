@@ -1,9 +1,7 @@
-
 // DMAの設定
 
 #ifndef DMA_H
 #define DMA_H
-
 
 // DMA0転送
 #define DMA0TRANSFER(sad,dad,size,mode)	\
@@ -32,9 +30,6 @@
 	REG_DM3DAD = dad;	\
 	REG_DM3CNT_L = size;	\
 	REG_DM3CNT_H = mode
-
-
-
 
 // 転送開始・中止
 #define DMA_TRANSFER_ON		(1<<15)
@@ -71,8 +66,6 @@
 #define DMA_DAD_DEC		(1<<5) // 転送ごとにデクリメント
 #define DMA_DAD_FIX		(2<<5) // 固定
 #define DMA_DAD_RESET	(3<<5) // インクリメント、転送終了時にリセット
-
-
 
 #endif
 
