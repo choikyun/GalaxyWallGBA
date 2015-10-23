@@ -1,0 +1,2 @@
+# GalaxyWallGBA
+GBAのゲームです
