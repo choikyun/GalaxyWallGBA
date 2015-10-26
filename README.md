@@ -1,2 +1,3 @@
-# GalaxyWallGBA
-GBAã®ã‚²ãƒ¼ãƒ ã§ã™
+#GakaxtWakk GBA
+GBA‚ÌƒQ[ƒ€‚Å‚·B  
+DivkitPro‚ÅƒRƒ“ƒpƒCƒ‹‰Â”\‚Å‚·B
