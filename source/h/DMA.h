@@ -67,6 +67,5 @@
 #define DMA_DAD_FIX		(2<<5) // 固定
 #define DMA_DAD_RESET	(3<<5) // インクリメント、転送終了時にリセット
 
-
 #endif
 

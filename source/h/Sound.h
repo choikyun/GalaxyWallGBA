@@ -1,7 +1,6 @@
 #ifndef SOUND_H
 #define SOUND_H
 
-
 #define REG_SGCNT0     *(u32*)0x4000080
 #define REG_SGCNT0_L   *(u16*)0x4000080
 #define REG_SGCNT0_H   *(u16*)0x4000082
@@ -33,9 +32,6 @@
 #define REG_TM0D       *(u16*)0x4000100
 #define REG_TM1D       *(u16*)0x4000104
 
-
-
-
 // サウンドの設定
 
 // REG_SGCNT0_L
@@ -51,7 +47,6 @@
 #define SOUND2_RIGHT_OUTPUT	(1<<13)
 #define SOUND3_RIGHT_OUTPUT	(1<<14)
 #define SOUND4_RIGHT_OUTPUT	(1<<15)
-
 
 // REG_SGCNT0_H   0x82
 
@@ -81,8 +76,6 @@
 // DirectSoundB FIFO リセット
 #define SOUND_DIRECTB_FIFO_RESET		(1<<15)
 
-
-
 // REG_SGCNT1
 
 #define SOUND1_STATUS	(1<<0) // サウンドの状態
@@ -90,8 +83,6 @@
 #define SOUND3_STATUS	(1<<2) // サウンドの状態
 #define SOUND4_STATUS	(1<<3) // サウンドの状態
 #define ALL_SOUND_ENABLE	(1<<7) // 全サウンド使用
-
-
 
 // サウンド1
 // スィープのあるエンベロープ音源
@@ -112,14 +103,12 @@
 #define SOUND1_ENVELOP_INC		((1)<<11) // エンベロープ増加
 #define SOUND1_ENVELOP_VALUE(x)	((x)<<12) // エンベロープ初期値 0-15
 
-
 // REG_SG11
 
 #define SOUND1_FREQ(x)	((x)<<0) // 周期 0-2048
 #define SOUND1_CONTINUE	(0<<14) // 継続
 #define SOUND1_TIMED	(1<<14) // 時間制限
 #define SOUND1_RESET	(1<<15) // サウンド1リセット
-
 
 // サウンド２　スィープのないエンベロープ音源
 // サウンド1のREG_SG10_H,REG_SG11と同じ
@@ -138,7 +127,6 @@
 #define SOUND2_TIMED	(1<<14) // 時間制限
 #define SOUND2_RESET	(1<<15) // サウンド1リセット
 
-
 // サウンド３
 //
 
@@ -153,12 +141,10 @@
 #define SOUND3_OUTPUT_ENABLE	(1<<7) // サウンド3出力
 #define SOUND3_OUTPUT_DISABLE	(0<<7) // サウンド3出力しない
 
-
 // REG_SG30_H
 
 #define SOUND3_LENGTH(x)	((x)<<0)	// サウンドの長さ 0-255
 #define SOUND3_VOLUME_RATIO(x)	((x)<<13)	// ボリューム出力レシオ 0-4 1が100%
-
 
 // REG_SG31
 
@@ -167,12 +153,10 @@
 #define SOUND3_TIMED	(1<<14) // 時間制限
 #define SOUND3_RESET	(1<<15) // サウンド1リセット
 
-
 // REG_SGWR0
 // REG_SGWR0_L
 // REG_SGWR0_H
 // …REG_SGWR3
-
 
 // サウンド4
 
@@ -182,7 +166,6 @@
 #define SOUND4_ENVELOP_DEC		((0)<<11) // エンベロープ現象
 #define SOUND4_ENVELOP_INC		((1)<<11) // エンベロープ増加
 #define SOUND4_ENVELOP_VALUE(x)	((x)<<12) // エンベロープ初期値 0-15
-
 
 // REG_SG41
 
@@ -194,8 +177,6 @@
 #define SOUND4_CONTINUE	(0<<14) // 継続
 #define SOUND4_TIMED	(1<<14) // 時間制限
 #define SOUND4_RESET	(1<<15) // サウンド1リセット
-
-
 
 // REG_SGCNT_H
 
@@ -221,7 +202,6 @@
 // DirectSoundAでFIFOをリセットする
 #define SOUND_DSOUNDA_FIFO_RESET	(1<<11)
 
-
 // DirectSoundBを左右のスピーカーに出力するか
 #define SOUND_DSOUNDB_OUTPUT_RIGHT	(1<<12)
 #define SOUND_DSOUNDB_OUTPUT_LEFT	(1<<13)
@@ -232,7 +212,6 @@
 
 // DirectSoundBでFIFOをリセットする
 #define SOUND_DSOUNDB_FIFO_RESET	(1<<15)
-
 
 #endif
 

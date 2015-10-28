@@ -105,7 +105,7 @@ read_sprite_y (u16 num)
 void
 init_sprite_chr (void)
 {
-  u16 *oam = DEF_MODE < MODE_3 ? OBJ_BASE_ADR : BITMAP_OBJ_BASE_ADR;// スプライトデータ
+  u16 *oam = DEF_MODE < MODE_3 ? OBJ_BASE_ADR : BITMAP_OBJ_BASE_ADR; // スプライトデータ
   u16 *pal = OBJ_COLORS;		// スプライトパレット
 
   // 共通パレット転送
