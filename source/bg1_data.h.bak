@@ -1,0 +1,24 @@
+
+//{{BLOCK(bg1_data)
+
+//======================================================================
+//
+//	bg1_data, 240x160@16, 
+//	+ bitmap lz77 compressed
+//	Total size: 10860 = 10860
+//
+//	Time-stamp: 2010-07-31, 05:18:02
+//	Exported by Cearn's GBA Image Transmogrifier, v0.8.6
+//	( http://www.coranac.com/projects/#grit )
+//
+//======================================================================
+
+#ifndef GRIT_BG1_DATA_H
+#define GRIT_BG1_DATA_H
+
+#define bg1_dataBitmapLen 10860
+extern const unsigned short bg1_dataBitmap[5430];
+
+#endif // GRIT_BG1_DATA_H
+
+//}}BLOCK(bg1_data)
