@@ -1,4 +1,3 @@
-
 #ifndef SOUND_H
 #define SOUND_H
 
@@ -141,7 +140,7 @@
 
 
 // サウンド３
-// 
+//
 
 // REG_SG30_L
 
@@ -189,7 +188,7 @@
 
 #define SOUND4_DIVIDE_FREQ(x)	((x)<<0) // 周期 0-7
 #define SOUND4_STAGE_15	(0<<3)	// カウンタステージ
-#define SOUND4_STAGE_7	(1<<3)	// 
+#define SOUND4_STAGE_7	(1<<3)	//
 
 #define SOUND4_STAGE_FREQ(x) ((x)<<4) // ステップごとの周期 0-13
 #define SOUND4_CONTINUE	(0<<14) // 継続
@@ -233,7 +232,6 @@
 
 // DirectSoundBでFIFOをリセットする
 #define SOUND_DSOUNDB_FIFO_RESET	(1<<15)
-
 
 
 #endif

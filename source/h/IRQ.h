@@ -1,4 +1,3 @@
-
 #ifndef IRQ_H
 #define IRQ_H
 
@@ -38,8 +37,5 @@
 #define IRQ_BIT_CART	(1<<13)
 
 
-
-
-
-#endif
+    #endif
 

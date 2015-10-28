@@ -1,40 +1,35 @@
-
 // DMAの設定
 
 #ifndef DMA_H
 #define DMA_H
 
-
 // DMA0転送
 #define DMA0TRANSFER(sad,dad,size,mode)	\
-	REG_DM0SAD = sad;	\
-	REG_DM0DAD = dad;	\
-	REG_DM0CNT_L = size;	\
-	REG_DM0CNT_H = mode
+  REG_DM0SAD = sad;	\
+  REG_DM0DAD = dad;	\
+  REG_DM0CNT_L = size;	\
+  REG_DM0CNT_H = mode
 
 // DMA1転送
 #define DMA1TRANSFER(sad,dad,size,mode)	\
-	REG_DM1SAD = sad;	\
-	REG_DM1DAD = dad;	\
-	REG_DM1CNT_L = size;	\
-	REG_DM1CNT_H = mode
+  REG_DM1SAD = sad;	\
+  REG_DM1DAD = dad;	\
+  REG_DM1CNT_L = size;	\
+  REG_DM1CNT_H = mode
 
 // DMA2転送
 #define DMA2TRANSFER(sad,dad,size,mode)	\
-	REG_DM2SAD = sad;	\
-	REG_DM2DAD = dad;	\
-	REG_DM2CNT_L = size;	\
-	REG_DM2CNT_H = mode
+  REG_DM2SAD = sad;	\
+  REG_DM2DAD = dad;	\
+  REG_DM2CNT_L = size;	\
+  REG_DM2CNT_H = mode
 
 // DMA3転送
 #define DMA3TRANSFER(sad,dad,size,mode)	\
-	REG_DM3SAD = sad;	\
-	REG_DM3DAD = dad;	\
-	REG_DM3CNT_L = size;	\
-	REG_DM3CNT_H = mode
-
-
-
+  REG_DM3SAD = sad;	\
+  REG_DM3DAD = dad;	\
+  REG_DM3CNT_L = size;	\
+  REG_DM3CNT_H = mode
 
 // 転送開始・中止
 #define DMA_TRANSFER_ON		(1<<15)
@@ -71,7 +66,6 @@
 #define DMA_DAD_DEC		(1<<5) // 転送ごとにデクリメント
 #define DMA_DAD_FIX		(2<<5) // 固定
 #define DMA_DAD_RESET	(3<<5) // インクリメント、転送終了時にリセット
-
 
 
 #endif

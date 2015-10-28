@@ -1,4 +1,4 @@
-// gba.h by eloist 
+// gba.h by eloist
 
 #ifndef GBA_HEADER
 #define GBA_HEADER
@@ -15,11 +15,11 @@ typedef unsigned char byte;
 typedef unsigned short hword;
 typedef unsigned long word;
 
-u32* OAMmem  		      =(u32*)0x7000000;
-u16* VideoBuffer 		=(u16*)0x6000000;
-u16* OAMData			=(u16*)0x6010000;
-u16* BGPaletteMem 	  	=(u16*)0x5000000;
-u16* OBJPaletteMem 	 	=(u16*)0x5000200;
+u32* OAMmem = (u32*) 0x7000000;
+u16* VideoBuffer = (u16*) 0x6000000;
+u16* OAMData = (u16*) 0x6010000;
+u16* BGPaletteMem = (u16*) 0x5000000;
+u16* OBJPaletteMem = (u16*) 0x5000200;
 
 #define REG_INTERUPT   *(u32*)0x3007FFC
 #define REG_DISPCNT    *(u32*)0x4000000
@@ -176,10 +176,6 @@ u16* OBJPaletteMem 	 	=(u16*)0x5000200;
 #define REG_IME        *(u16*)0x4000208
 #define REG_PAUSE      *(u16*)0x4000300
 
-
-
-
-
 ///// REG_DISPCNT defines
 
 #define MODE_0 0x0
@@ -190,7 +186,7 @@ u16* OBJPaletteMem 	 	=(u16*)0x5000200;
 #define MODE_5 0x5
 
 #define BACKBUFFER 0x10
-#define H_BLANK_OAM 0x20 
+#define H_BLANK_OAM 0x20
 
 #define OBJ_MAP_2D 0x0
 #define OBJ_MAP_1D 0x40
@@ -198,21 +194,17 @@ u16* OBJPaletteMem 	 	=(u16*)0x5000200;
 #define FORCE_BLANK 0x80
 
 #define BG0_ENABLE 0x100
-#define BG1_ENABLE 0x200 
+#define BG1_ENABLE 0x200
 #define BG2_ENABLE 0x400
 #define BG3_ENABLE 0x800
-#define OBJ_ENABLE 0x1000 
+#define OBJ_ENABLE 0x1000
 
-#define WIN1_ENABLE 0x2000 
+#define WIN1_ENABLE 0x2000
 #define WIN2_ENABLE 0x4000
 #define WINOBJ_ENABLE 0x8000
 
-
 ///////SetMode Macro
-#define SetMode(mode) REG_DISPCNT = (mode) 
-
-
-
+#define SetMode(mode) REG_DISPCNT = (mode)
 
 #define KEY_A 		1
 #define KEY_B 		2
@@ -224,10 +216,7 @@ u16* OBJPaletteMem 	 	=(u16*)0x5000200;
 #define KEY_DOWN 		128
 #define KEY_R		256
 #define KEY_L 		512
-volatile u32* KEYS = (volatile u32*)0x04000130;
-
-
-
+volatile u32* KEYS = (volatile u32*) 0x04000130;
 
 #define BIT0	1
 #define BIT1	2
@@ -246,13 +235,8 @@ volatile u32* KEYS = (volatile u32*)0x04000130;
 #define BIT14	16384
 #define BIT15	32768
 
-
-
 // カラーパレットの「正しい」変換
 #define RGB(r,g,b)	((((b)>>3)<<10)+(((g)>>3)<<5)+((r)>>3))
-
-
-
 
 #endif
 

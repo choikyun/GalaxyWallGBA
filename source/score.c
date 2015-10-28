@@ -1,149 +1,144 @@
 ﻿/***************************************************
-	GALAXY WALL for GBA
-	ver 1.00
-	2010.7.27
-	choi kyun
-***************************************************/
+ GALAXY WALL for GBA
+ ver 1.00
+ 2010.7.27
+ choi kyun
+ ***************************************************/
 //#define GLOBAL_VALUE_DEFINE
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <gba.h>
 
-
 #include "game.h"
 #include "score.h"
 
-
-
 /***************************************************
-	スコア 初期化
-***************************************************/
+ スコア 初期化
+ ***************************************************/
 void
-init_hiscore( void )
+init_hiscore (void)
 {
-	if( ! SRAMRead8( SRAM_CHECK_HISC ) )
-	 {
-			level[ LV_NOMAL ].hiscore = 0;
-			level[ LV_HARD ].hiscore = 0;
-			SRAMWrite32( SRAM_HISCORE_NOMAL, 0 );
-			SRAMWrite32( SRAM_HISCORE_HARD, 0 );
-			SRAMWrite8( SRAM_CHECK_HISC, SRAM_ON );
-	 }
-	else
-	 {
-			level[ LV_NOMAL ].hiscore = SRAMRead32( SRAM_HISCORE_NOMAL );
-			level[ LV_HARD ].hiscore = SRAMRead32( SRAM_HISCORE_HARD );
-	 }
+  if (!SRAMRead8 ( SRAM_CHECK_HISC))
+  {
+    level[LV_NOMAL].hiscore = 0;
+    level[LV_HARD].hiscore = 0;
+    SRAMWrite32 ( SRAM_HISCORE_NOMAL, 0);
+    SRAMWrite32 ( SRAM_HISCORE_HARD, 0);
+    SRAMWrite8 ( SRAM_CHECK_HISC, SRAM_ON);
+  }
+  else
+  {
+    level[LV_NOMAL].hiscore = SRAMRead32 ( SRAM_HISCORE_NOMAL);
+    level[LV_HARD].hiscore = SRAMRead32 ( SRAM_HISCORE_HARD);
+  }
 }
 
-
-
 /***************************************************
-	スコア クリア
-***************************************************/
+ スコア クリア
+ ***************************************************/
 void
-clear_hiscore( void )
+clear_hiscore (void)
 {
-	SRAMWrite8( SRAM_CHECK_HISC, 0 );
-	SRAMWrite32( SRAM_HISCORE_NOMAL, 0 );
-	SRAMWrite32( SRAM_HISCORE_HARD, 0 );
-	level[ LV_NOMAL ].hiscore = 0;
-	level[ LV_HARD ].hiscore = 0;
-	update_hiscores();
+  SRAMWrite8 ( SRAM_CHECK_HISC, 0);
+  SRAMWrite32 ( SRAM_HISCORE_NOMAL, 0);
+  SRAMWrite32 ( SRAM_HISCORE_HARD, 0);
+  level[LV_NOMAL].hiscore = 0;
+  level[LV_HARD].hiscore = 0;
+  update_hiscores ();
 }
 
-
-
 /***************************************************
-	スコア セーブ
-***************************************************/
+ スコア セーブ
+ ***************************************************/
 void
-save_hiscore( u32 sc )
+save_hiscore (u32 sc)
 {
-	u8 check = SRAMRead8( SRAM_CHECK_HISC );
-	
+  u8 check = SRAMRead8 ( SRAM_CHECK_HISC);
 
-	if( sc > level[ game_state.mode ].hiscore && check )
-		{
-			if( game_state.mode )
-				{
-					SRAMWrite32( SRAM_HISCORE_HARD, sc );
-				}
-			else
-				{
-					SRAMWrite32( SRAM_HISCORE_NOMAL, sc );
-				}
-		}
+  if (sc > level[game_state.mode].hiscore && check)
+  {
+    if (game_state.mode)
+    {
+      SRAMWrite32 ( SRAM_HISCORE_HARD, sc);
+    }
+    else
+    {
+      SRAMWrite32 ( SRAM_HISCORE_NOMAL, sc);
+    }
+  }
 }
 
-
-
 /***************************************************
-	スコア　ロード
-***************************************************/
+ スコア　ロード
+ ***************************************************/
 u32
-load_hiscore()
+load_hiscore ()
 {
-	if( game_state.mode )
-		{
-			return SRAMRead32( SRAM_HISCORE_HARD );
-		}
-	else
-		{
-			return SRAMRead32( SRAM_HISCORE_NOMAL );
-		}
+  if (game_state.mode)
+  {
+    return SRAMRead32 ( SRAM_HISCORE_HARD);
+  }
+  else
+  {
+    return SRAMRead32 ( SRAM_HISCORE_NOMAL);
+  }
 }
-
-
 
 /***************************************************
-	SRAM操作　http://akkera102.sakura.ne.jp/gbadev/index.php?Doc.8%20GBA%A4%CE%BB%C5%CD%CD%A4%CB%A4%C4%A4%A4%A4%C6%28SRAM%29
-	より
-***************************************************/
+ SRAM操作　http://akkera102.sakura.ne.jp/gbadev/index.php?Doc.8%20GBA%A4%CE%BB%C5%CD%CD%A4%CB%A4%C4%A4%A4%A4%C6%28SRAM%29
+ より
+ ***************************************************/
 // READ SRAM
-u8 SRAMRead8(u32 offset)
+u8
+SRAMRead8 (u32 offset)
 {
-	u8* sram = (u8*)SRAM + offset;
-	return (u8)sram[0];
+  u8* sram = (u8*) SRAM + offset;
+  return (u8) sram[0];
 }
 
-u16 SRAMRead16(u32 offset)
+u16
+SRAMRead16 (u32 offset)
 {
-	u8* sram = (u8*)SRAM + offset;
-	return (u16)sram[0] | (u16)sram[1]<<8;
+  u8* sram = (u8*) SRAM + offset;
+  return (u16) sram[0] | (u16) sram[1] << 8;
 }
 
-u32 SRAMRead32(u32 offset)
+u32
+SRAMRead32 (u32 offset)
 {
-	u8* sram = (u8*)SRAM + offset;
-	return (u32)sram[0] | (u32)sram[1]<<8 | (u32)sram[2]<<16 | (u32)sram[3]<<24;
+  u8* sram = (u8*) SRAM + offset;
+  return (u32) sram[0] | (u32) sram[1] << 8 | (u32) sram[2] << 16
+      | (u32) sram[3] << 24;
 }
 
 // WRITE SRAM
-void SRAMWrite8(u32 offset, u8 data)
+void
+SRAMWrite8 (u32 offset, u8 data)
 {
-	u8* sram = (u8*)SRAM + offset;
-	*sram = (u8)(data & 0xff);
+  u8* sram = (u8*) SRAM + offset;
+  *sram = (u8) (data & 0xff);
 }
 
-void SRAMWrite16(u32 offset, u16 data)
+void
+SRAMWrite16 (u32 offset, u16 data)
 {
-	u8* sram = (u8*)SRAM + offset;
-	*sram++ = (u8)((data   ) & 0x00ff);
-	*sram   = (u8)((data>>8) & 0x00ff);
+  u8* sram = (u8*) SRAM + offset;
+  *sram++ = (u8) ((data) & 0x00ff);
+  *sram = (u8) ((data >> 8) & 0x00ff);
 }
 
-void SRAMWrite32(u32 offset, u32 data)
+void
+SRAMWrite32 (u32 offset, u32 data)
 {
-	u8* sram = (u8*)SRAM + offset;
-	*sram++ = (u8)((data    ) & 0x000000ff);
-	*sram++ = (u8)((data>>8 ) & 0x000000ff);
-	*sram++ = (u8)((data>>16) & 0x000000ff);
-	*sram   = (u8)((data>>24) & 0x000000ff);
+  u8* sram = (u8*) SRAM + offset;
+  *sram++ = (u8) ((data) & 0x000000ff);
+  *sram++ = (u8) ((data >> 8) & 0x000000ff);
+  *sram++ = (u8) ((data >> 16) & 0x000000ff);
+  *sram = (u8) ((data >> 24) & 0x000000ff);
 }
 
-u8* SRAMGetPointer()
+u8*
+SRAMGetPointer ()
 {
-	return (u8*)SRAM;
+  return (u8*) SRAM;
 }

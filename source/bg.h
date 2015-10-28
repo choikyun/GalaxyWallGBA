@@ -1,9 +1,9 @@
 ﻿/***************************************************
-	GALAXY WALL for GBA
-	ver 1.00
-	2010.7.27
-	choi kyun
-***************************************************/
+ GALAXY WALL for GBA
+ ver 1.00
+ 2010.7.27
+ choi kyun
+ ***************************************************/
 
 #ifndef _bg_h_
 #define _bg_h_
@@ -23,8 +23,6 @@
 #include "nomal_tile.h"
 #include "hard_tile.h"
 
-
-
 #ifdef GLOBAL_VALUE_DEFINE
 #define GLOBAL
 #define GLOBAL_VAL(v) = (v)
@@ -32,7 +30,6 @@
 #define GLOBAL extern
 #define GLOBAL_VAL(v)
 #endif
-
 
 ///////////////////////////////////////////////////////////////////// 各種定義
 
@@ -105,7 +102,6 @@
 #define HARD_TILE_LEN (hard_tileTilesLen/2)
 #define HARD_TILE hard_tileTiles
 
-
 // BGメテオマップ
 #define DEF_METEO_BASE MAP_BASE(30)
 #define DEF_METEO_BASE_ADR MAP_BASE_ADR(30)
@@ -120,17 +116,18 @@
 #define DEF_BG_PALLET_LEN (bg_tilePalLen/2)
 #define DEF_BG_PALLET bg_tilePal
 
-
-
 ///////////////////////////////////////////////////////////////////// グローバル変数
 
-
 //////////////////////////////////////////////////////////////////// プロトタイプ
-void init_bg( void );
-void init_bg_bitmap( void );
-void init_bg_bitmap_lz77( void );
-void init_bg_tile( void );
-void init_title();
-
+void
+init_bg (void);
+void
+init_bg_bitmap (void);
+void
+init_bg_bitmap_lz77 (void);
+void
+init_bg_tile (void);
+void
+init_title ();
 
 #endif	/* _bg_h_ */

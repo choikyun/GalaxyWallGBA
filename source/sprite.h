@@ -1,9 +1,9 @@
 ﻿/***************************************************
-	GALAXY WALL for GBA
-	ver 1.00
-	2010.7.27
-	choi kyun
-***************************************************/
+ GALAXY WALL for GBA
+ ver 1.00
+ 2010.7.27
+ choi kyun
+ ***************************************************/
 
 #ifndef _sprite_h_
 #define _sprite_h_
@@ -24,8 +24,6 @@
 #include "option_shot.h"
 #include "option_bonus.h"
 
-
-
 #ifdef GLOBAL_VALUE_DEFINE
 #define GLOBAL
 #define GLOBAL_VAL(v) = (v)
@@ -33,7 +31,6 @@
 #define GLOBAL extern
 #define GLOBAL_VAL(v)
 #endif
-
 
 ///////////////////////////////////////////////////////////////////// 各種定義
 
@@ -84,25 +81,24 @@
 #define ICON_SHOT_TILE option_shotTiles
 #define ICON_BONUS_TILE option_bonusTiles
 
-
-
-
 ///////////////////////////////////////////////////////////////////// グローバル変数
 
-
-
-
 //////////////////////////////////////////////////////////////////// プロトタイプ
-void init_sprite( void );
-void move_sprite( u16 num, s16 x, s16 y );
-void set_sprite_form( u16 num, u16 size, u16 form, u16 col );
-void set_sprite_tile( u16 num, u16 tile );
-void init_sprite_chr( void );
-void erase_sprite( u16 num );
-s16 read_sprite_x( u16 num );
-s16 read_sprite_y( u16 num );
-
-
-
+void
+init_sprite (void);
+void
+move_sprite (u16 num, s16 x, s16 y);
+void
+set_sprite_form (u16 num, u16 size, u16 form, u16 col);
+void
+set_sprite_tile (u16 num, u16 tile);
+void
+init_sprite_chr (void);
+void
+erase_sprite (u16 num);
+s16
+read_sprite_x (u16 num);
+s16
+read_sprite_y (u16 num);
 
 #endif	/* _sprite_h_ */
